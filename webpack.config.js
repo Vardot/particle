@@ -6,15 +6,15 @@ const path = require('path');
 const { DefinePlugin } = require('webpack');
 
 // Plugins
-const RunScriptAfterEmit = require('../../tools/webpack/run-script-after-emit');
-const particle = require('../../particle');
-// const particle = require('../../../../../../docroot/core/assets/vendor/jquery.ui');
-const webpack = require('webpack'); //to access built-in plugins
+const RunScriptAfterEmit = require('./tools/webpack/run-script-after-emit');
+const particle = require('./particle');
+// const particle = require('../../../../docroot/core/assets/vendor/jquery.ui');
+const webpack = require('webpack'); // to access built-in plugins
 // Constants: environment
 const { NODE_ENV } = process.env;
 
 // Constants: root
-const { ASSETS_ATOMIC_FOLDER } = require('../../particle.root.config');
+const { ASSETS_ATOMIC_FOLDER } = require('./particle.root.config');
 
 // Constants: app
 const appConfig = require('./particle.app.config');
@@ -55,7 +55,7 @@ const shared = {
 // // const path = require('path');
 // new webpack.ProvidePlugin({
 //   // identifier: ['jquery.ui'],
-//   "jquery-ui": path.resolve(path.join(__dirname, '../../../../../../docroot/core/assets/vendor/jquery.ui'))
+//   "jquery-ui": path.resolve(path.join(__dirname, '../../../../docroot/core/assets/vendor/jquery.ui'))
 //   // "jquery-ui": "jquery-ui/jquery-ui.js",
 // });
 
