@@ -1,15 +1,14 @@
 /**
  * PostCSS config
  */
+import postcssPresetEnv from "postcss-preset-env";
+import cssnano from "cssnano";
+import tailwindcss from "tailwindcss";
+import hexrgba from "postcss-hexrgba";
+import stylelint from "stylelint";
+import postcssReporter from "postcss-reporter";
 
-const postcssPresetEnv = require('postcss-preset-env');
-const cssnano = require('cssnano');
-const tailwindcss = require('tailwindcss');
-const hexrgba = require('postcss-hexrgba');
-const stylelint = require('stylelint');
-const postcssReporter = require('postcss-reporter');
-
-module.exports = ({ options, env }) => {
+export default ({ options, env }) => {
   return {
     plugins: [
       stylelint(),
