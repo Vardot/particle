@@ -66,7 +66,9 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              ident: 'postcss',
+              postcssOptions: {
+                ident: 'postcss',
+              }
             },
           },
         ],
