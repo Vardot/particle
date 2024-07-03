@@ -9,7 +9,7 @@
 const { ProgressPlugin, ProvidePlugin } = require('webpack');
 
 // Plugins
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const TerserPlugin = require('terser-webpack-plugin');
 
 // Constants: environment
