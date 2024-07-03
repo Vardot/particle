@@ -55,6 +55,7 @@
         "file-loader": "^6.0.0",
         "fs-extra": "^9.0.1",
         "jsondiffpatch": "^0.4.1",
+        "mini-css-extract-plugin": "^2.9.0",
         "postcss-cli": "^11.0.0",
         "postcss-hexrgba": "^2.1.0",
         "postcss-loader": "^8.1.1",
