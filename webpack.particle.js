@@ -120,7 +120,9 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: NODE_ENV === 'production',
+        terserOptions: {
+          sourceMap: NODE_ENV === 'production',
+        }
       }),
     ],
   },
