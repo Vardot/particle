@@ -39,8 +39,6 @@
         "test:unit": "npm run test:unit:default",
         "test:tools:generators": "NODE_ENV=test jest --projects tools/generators/",
         "test": "npm run test:unit",
-        "ci": "npm run lint && npm run test && npm run build:pl && npm run build:drupal",
-        "new": "yo new-component",
         "postinstall": "cd tools/generators/new-component && npm link"
     },
     "dependencies": {
