@@ -4,8 +4,7 @@
 const path = require('path');
 
 // Library Imports
-const merge = require('webpack-merge');
-
+const { mergeWithRules } = require('webpack-merge');
 // Plugins:production
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -87,9 +86,13 @@ const particle = (appWebpack, appConfig, options) => {
   // eslint-disable-next-line
   const dsWebpack = require(path.resolve(APP_DESIGN_SYSTEM, 'webpack.config'));
 
-  return merge.smartStrategy({
-    // Prepend the css style-loader vs MiniExtractTextPlugin
-    'module.rules.use': 'prepend',
+  return mergeWithRules({
+    module: {
+      rules: {
+        test: "match",
+        use: "prepend",
+      },
+    },
   })(
     // Particle standard config
     particleBase,
