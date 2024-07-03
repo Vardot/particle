@@ -17,29 +17,15 @@
         "prototyping"
     ],
     "scripts": {
-        "start": "npm run dev:pl",
-        "pl": "node ./apps/pl-default/pl-app.js",
-        "setup": "patternlab install --config ./apps/pl-default/patternlab-config.json && patternlab build --config ./apps/pl-default/patternlab-config.json",
-        "export:pl": "patternlab export --config ./apps/pl-default/patternlab-config.json",
-        "dev:pl": "cross-env-shell NODE_ENV=development \"npm run pl & webpack-dev-server --config ./apps/pl-default/webpack.config.js --hot\"",
-        "build:pl": "cross-env-shell NODE_ENV=production \"npm run pl && webpack --config ./apps/pl-default/webpack.config.js\"",
         "dev:drupal": "cross-env-shell NODE_ENV=development \"webpack --watch --config ./apps/drupal-default/webpack.config.js\"",
         "build:drupal": "cross-env-shell NODE_ENV=production \"webpack --hide-modules --config ./apps/drupal-default/webpack.config.js\"",
+        "lint": "npm run lint:js; npm run lint:css;",
         "lint:js": "eslint --ext .js,.vue ./",
         "lint:css": "stylelint '**/*.css'",
-        "lint": "npm run lint:js; npm run lint:css;",
+        "fmt": "npm run fmt:svg; npm run fmt:js; npm run fmt:css; prettier --write .",
         "fmt:js": "npm run lint:js -- --fix",
         "fmt:css": "npm run lint:css -- --fix && prettier --write '**/*.css'",
-        "fmt:svg": "svgo -f ./source/default/_patterns/01-atoms/svg/icons --config=./.svgo.yml",
-        "fmt": "npm run fmt:svg; npm run fmt:js; npm run fmt:css; prettier --write .",
-        "test:backstop:ref": "node tools/tests/vrt/backstop-example-reference.js",
-        "test:backstop:test": "node tools/tests/vrt/backstop-example-test.js",
-        "test:pa11y": "pa11y-ci --config tools/tests/accessibility/pa11y.js",
-        "test:unit:default": "NODE_ENV=test jest --projects source/default/",
-        "test:unit": "npm run test:unit:default",
-        "test:tools:generators": "NODE_ENV=test jest --projects tools/generators/",
-        "test": "npm run test:unit",
-        "postinstall": "cd tools/generators/new-component && npm link"
+        "fmt:svg": "svgo -f ./source/default/_patterns/01-atoms/svg/icons --config=./.svgo.yml"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.30",
