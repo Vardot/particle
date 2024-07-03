@@ -4,10 +4,10 @@
 core:
   css:
     theme:
-      ../../../dist/app-drupal/assets/app.styles.css:
+      ../dist/app-drupal/assets/app.styles.css:
         minified: true
   js:
-    ../../../dist/app-drupal/assets/app.js:
+    ../dist/app-drupal/assets/app.js:
       preprocess: false
   # See all in Drupal's `core/core.libraries.yml`
   dependencies:
@@ -18,7 +18,7 @@ core:
 # See `libraries-override` in particle.info.yml
 jquery:
   js:
-    ../../../dist/app-drupal/assets/drupal-jquery.js:
+    ../dist/app-drupal/assets/drupal-jquery.js:
       preprocess: false
       weight: -20
 
@@ -31,7 +31,7 @@ jquery:
 #FILE IN app-drupal/assets DOES NOT EXIST. THIS FILE IS CALLED BY THE UTCADMIN MODULEE
 #ckeditor-jquery:
 #  js:
-#    ../../../dist/app-drupal/assets/ckeditor-jquery.js:
+#    ../dist/app-drupal/assets/ckeditor-jquery.js:
 #  dependencies:
 #    - particle/jquery
 #    - particle/jquery.ui.dialog
@@ -40,21 +40,21 @@ jquery:
 # utc-lib-chatbutton:
 #   version: VERSION
 #   js:
-#     ../../../dist/app-drupal/assets/legacy/js/utc-lib-chatbutton.js: {}
+#     ../dist/app-drupal/assets/legacy/js/utc-lib-chatbutton.js: {}
 #   dependencies:
 #     - core/jquery
 
 # utc-lib-primosearch:
 #   version: VERSION
 #   js:
-#     ../../../dist/app-drupal/assets/legacy/js/utc-lib-primosearch.js: {}
+#     ../dist/app-drupal/assets/legacy/js/utc-lib-primosearch.js: {}
 #   dependencies:
 #     - core/jquery
 
 # slick-custom-arrows:
 #   version: VERSION
 #   js:
-#     ../../../dist/app-drupal/assets/legacy/js/slick-custom-arrows.js: {}
+#     ../dist/app-drupal/assets/legacy/js/slick-custom-arrows.js: {}
 #   dependencies:
 #     - core/jquery
 #     - core/jquery.once
