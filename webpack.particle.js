@@ -11,6 +11,7 @@ const { ProgressPlugin, ProvidePlugin } = require('webpack');
 // Plugins
 const { VueLoaderPlugin } = require('vue-loader');
 const TerserPlugin = require('terser-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 // Constants: environment
 // NODE_ENV is set within all NPM scripts before running Webpack, eg:
@@ -71,17 +72,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.(js|vue)$/,
-        enforce: 'pre',
-        //exclude: /node_modules/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          emitWarning: true, // development only
-          // emitWarning: false, // production only
-        },
-      },
-      {
         test: /\.js$/,
         // @babel runtime and core must NOT be transformed by babel
         exclude: /@babel(?:\/|\\{1,2})runtime|core-js/,
@@ -127,6 +117,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin({
+      extensions: ['js', 'vue'],
+      exclude: [
+        '/node_modules/'
+      ],
+    }),
     // Provides "global" vars mapped to an actual dependency. Allows e.g. jQuery
     // plugins to assume that `window.jquery` is available
     new ProvidePlugin({

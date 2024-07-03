@@ -52,6 +52,7 @@
         "cssnano": "^7.0.3",
         "eslint": "^9.6.0",
         "eslint-config-prettier": "^9.1.0",
+        "eslint-webpack-plugin": "^4.2.0",
         "file-loader": "^6.0.0",
         "fs-extra": "^9.0.1",
         "jsondiffpatch": "^0.4.1",
