@@ -20,7 +20,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              config: {
+              postcssOptions: {
                 path: path.join('postcss.config.js'),
                 ctx: {
                   // PostCSS Tailwind config
