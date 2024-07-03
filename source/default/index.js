@@ -19,7 +19,7 @@
  *     // ...
  *   };
  */
-import importAll from '../../tools/webpack/import-all';
+import importAll from './tools/webpack/import-all';
 /**
  * Dynamically discover all root patterns using Webpack's require.context().
  * This attempts to find ONLY the first index.js file within a component folder.
