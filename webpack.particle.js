@@ -145,7 +145,7 @@ module.exports = {
       // be output via twig, we need the Vue build that includes the whole
       // template compiling engine. If we are on a build that will NEVER read
       // HTML from the DOM and use it as a template, then remove this line.
-      vue$: 'vue/dist/vue.esm.js',
+      'Vue': 'vue/dist/vue.esm-bundler.js',
     },
   },
 };
