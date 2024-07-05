@@ -16,20 +16,8 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                path: path.join('postcss.config.js'),
-                ctx: {
-                  // PostCSS Tailwind config
-                  tailwindConfig: path.resolve(__dirname, 'tailwind.config.js'),
-                },
-              },
-            },
-          },
-        ],
+        include: path.resolve(__dirname, '_patterns'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.svg$/,

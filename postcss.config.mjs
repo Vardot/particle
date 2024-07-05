@@ -13,7 +13,9 @@ export default ({ options, env }) => {
     plugins: [
       stylelint(),
       // tailwindConfig is set per *design system* webpack.config.js.
-      options.tailwindConfig && tailwindcss(options.tailwindConfig),
+      tailwindcss({
+        config: './source/default/tailwind.config.js',
+      }),
       // Hex in rgba like Sass
       hexrgba(),
       // Use .browserslistrc to determine CSS mutations
