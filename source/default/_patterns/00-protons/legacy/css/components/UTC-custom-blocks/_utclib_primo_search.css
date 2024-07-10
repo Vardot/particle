@@ -24,8 +24,11 @@ a.lib-search__info {
   float: right;
   @apply text-utc-new-gold-500;
   border-bottom: 0px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 a.lib-search__info:hover,
@@ -44,7 +47,7 @@ a.lib-search__info i.fa-info {
 }
 
 .lib-search__title {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.15rem;
   line-height: 1.5rem;
   @apply text-black;
@@ -71,8 +74,11 @@ input.lib-search__input {
   border-radius: 0;
   font-size: 1rem;
   height: auto;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 input.lib-search__input:hover,
@@ -101,8 +107,11 @@ input.lib-search__input:focus {
   border-radius: 0;
   @apply text-white;
   @apply bg-utc-new-blue-500;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .lib-search__button:hover,
@@ -124,5 +133,5 @@ input.lib-search__input:focus {
 }
 
 .lib-search__links li:nth-child(n + 2):before {
-  content: '|';
+  content: "|";
 }

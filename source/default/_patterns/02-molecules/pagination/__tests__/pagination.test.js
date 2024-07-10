@@ -1,5 +1,5 @@
-import { name } from '..';
+import { name } from "..";
 
-test('pagination component is registered', () => {
-  expect(name).toBe('pagination');
+test("pagination component is registered", () => {
+  expect(name).toBe("pagination");
 });

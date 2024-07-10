@@ -19,7 +19,7 @@
  *     // ...
  *   };
  */
-import importAll from '../../tools/webpack/import-all';
+import importAll from "../../tools/webpack/import-all";
 /**
  * Dynamically discover all root patterns using Webpack's require.context().
  * This attempts to find ONLY the first index.js file within a component folder.
@@ -38,11 +38,11 @@ import importAll from '../../tools/webpack/import-all';
  */
 const atomicContext = require.context(
   // From patterns folder
-  './_patterns',
+  "./_patterns",
   // Deep dive all directories below
   true,
   // Get the first folders after atoms|molecules|organisms
-  /^\.\/(01-atoms|02-molecules|03-organisms|04-templates|05-pages)\/[\w-]+$/
+  /^\.\/(01-atoms|02-molecules|03-organisms|04-templates|05-pages)\/[\w-]+$/,
 );
 /**
  * The components collection. Keys will be the exported name of each component,

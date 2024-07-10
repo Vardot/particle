@@ -30,10 +30,10 @@
  */
 
 // Import the card component
-import card from './card.vue';
+import card from "./card.vue";
 
 export default {
-  name: 'Cards',
+  name: "Cards",
   components: {
     card,
   },
@@ -52,7 +52,7 @@ export default {
     // we use a method (toggle()) that uses the $set utility to create the new
     // key and make it reactive.
     toggle(item) {
-      this.$set(item, 'isClicked', !item.isClicked);
+      this.$set(item, "isClicked", !item.isClicked);
     },
   },
 };

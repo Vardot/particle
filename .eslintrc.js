@@ -7,13 +7,13 @@
 
 module.exports = {
   extends: [
-    'airbnb-base',
-    'plugin:jest/recommended',
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
+    "airbnb-base",
+    "plugin:jest/recommended",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
   ],
-  plugins: ['prettier'],
+  plugins: ["prettier"],
   root: true,
   globals: {
     Drupal: true,
@@ -26,7 +26,7 @@ module.exports = {
     node: true,
   },
   rules: {
-    'no-console': [0], // turned off for now while we are console.logging everywhere.
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    "no-console": [0], // turned off for now while we are console.logging everywhere.
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
   },
 };

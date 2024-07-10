@@ -1,6 +1,6 @@
-import * as Vue from 'vue'
+import * as Vue from "vue";
 
-import App from './app.vue';
+import App from "./app.vue";
 
 export default (el) =>
   new Vue({

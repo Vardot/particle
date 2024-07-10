@@ -1,5 +1,5 @@
-const { exec, spawnSync } = require('child_process');
-const os = require('os');
+const { exec, spawnSync } = require("child_process");
+const os = require("os");
 
 class ShellHelper {
   constructor(options) {
@@ -12,8 +12,8 @@ class ShellHelper {
   }
 
   static serializeScript(script) {
-    if (typeof script === 'string') {
-      const [command, ...args] = script.split(' ');
+    if (typeof script === "string") {
+      const [command, ...args] = script.split(" ");
       return { command, args };
     }
     const { command, args } = script;
@@ -21,11 +21,11 @@ class ShellHelper {
   }
 
   handleScript(script) {
-    if (os.platform() === 'win32' || this.options.safe) {
+    if (os.platform() === "win32" || this.options.safe) {
       ShellHelper.spreadStdoutAndStdErr(exec(script, this.puts));
     } else {
       const { command, args } = ShellHelper.serializeScript(script);
-      spawnSync(command, args, { stdio: 'inherit' });
+      spawnSync(command, args, { stdio: "inherit" });
     }
   }
 }

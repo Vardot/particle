@@ -2,7 +2,7 @@
 
 /* filter styles */
 #views-exposed-form-utclib-guides-block-1 .form-select,
-#views-exposed-form-utclib-guides-block-1 input[type='text'] {
+#views-exposed-form-utclib-guides-block-1 input[type="text"] {
   height: 50px;
   width: 100%;
   border: 2px solid;
@@ -22,7 +22,7 @@
 /* guide type header */
 .view-utclib-guides .view-grouping-header {
   margin-top: 1.5rem;
-  font-family: 'Exo', 'Helvetica Neue', sans-serif;
+  font-family: "Exo", "Helvetica Neue", sans-serif;
   font-size: 1.5rem;
   @apply text-utc-new-blue-500;
 }
@@ -59,7 +59,8 @@
   width: 100%;
   @apply bg-white;
   border: 1px solid #edf2f7;
-  box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 6px 8px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-left: 5px solid #112e51;
   margin: 5px 8px;
@@ -80,7 +81,7 @@
 .utclib-embed--new-databases h2.block__title {
   display: block;
   @apply text-utc-new-blue-500;
-  font-family: 'Exo', 'Helvetica Neue', sans-serif;
+  font-family: "Exo", "Helvetica Neue", sans-serif;
   text-transform: none;
   @apply bg-gray-200;
   padding: 0.75rem 1.25rem;
@@ -94,7 +95,8 @@
   word-wrap: break-word;
   border: 0;
   border-radius: 0;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
 }
@@ -111,7 +113,7 @@
 ul.s-lg-link-list li {
   border-bottom: 1px solid lightgrey;
   margin-bottom: 0.5rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 ul.s-lg-link-list li a {
@@ -119,12 +121,12 @@ ul.s-lg-link-list li a {
   font-size: 1rem;
   @apply text-utc-new-blue-500;
   line-height: 1.25;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .s-lg-link-desc,
 .s-lg-link-desc a {
-  font-size: .9rem !important;
+  font-size: 0.9rem !important;
 }
 
 ul.s-lg-link-list li:last-child {

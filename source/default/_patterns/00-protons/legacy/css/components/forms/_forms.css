@@ -11,7 +11,7 @@ table .form-actions:last-child {
 
 .form-item label:not(.option) {
   margin-bottom: 0;
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: bold;
 }
 
@@ -25,27 +25,27 @@ table .form-actions:last-child {
   margin-right: 0.278rem;
 }
 
-input[type='text'],
-input[type='time'],
-input[type='url'],
-input[type='password'],
-input[type='color'],
-input[type='week'],
-input[type='date'],
-input[type='tel'],
-input[type='email'],
-input[type='number'],
-input[type='datetime-local'],
-input[type='range'],
-input[type='month'],
-input[type='search'] {
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="password"],
+input[type="color"],
+input[type="week"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="datetime-local"],
+input[type="range"],
+input[type="month"],
+input[type="search"] {
   background-color: #fff;
   display: block;
   width: 100%;
   padding: 10px 1rem;
   border: 1px solid;
   border-color: #cfd8dc;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   box-shadow: inset 0 1px 1px rgba(38, 50, 56, 0.075);
   color: #607d8b;
   font-size: 0.85rem;
@@ -55,20 +55,20 @@ input[type='search'] {
 }
 
 @media (min-width: 768px) {
-  input[type='text'],
-  input[type='time'],
-  input[type='url'],
-  input[type='password'],
-  input[type='color'],
-  input[type='week'],
-  input[type='date'],
-  input[type='tel'],
-  input[type='email'],
-  input[type='number'],
-  input[type='datetime-local'],
-  input[type='range'],
-  input[type='month'],
-  input[type='search'] {
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="password"],
+  input[type="color"],
+  input[type="week"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="datetime-local"],
+  input[type="range"],
+  input[type="month"],
+  input[type="search"] {
     font-size: 0.85rem;
   }
 }
@@ -106,7 +106,7 @@ textarea {
   transition: border-color 0.15s;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   margin-left: 3px;
 }
 
@@ -159,9 +159,9 @@ details summary:before {
   margin-right: 18px;
   transform: translate(0, 2px) rotate(90deg);
   transform-origin: center;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
-details summary[aria-expanded=true]:before {
+details summary[aria-expanded="true"]:before {
   font-family: unset;
   margin-left: -1rem;
   display: inline-block;
@@ -174,7 +174,7 @@ details summary[aria-expanded=true]:before {
   margin-right: 18px;
   transform: translate(0, -6px) rotate(-90deg);
   transform-origin: center;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 details summary:hover {

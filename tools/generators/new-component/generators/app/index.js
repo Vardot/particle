@@ -7,23 +7,23 @@
  * where they live.
  */
 
-const { join, relative, extname } = require('path');
-const { readdirSync } = require('fs');
+const { join, relative, extname } = require("path");
+const { readdirSync } = require("fs");
 
-const Generator = require('yeoman-generator');
-const { camelCase, kebabCase, snakeCase, startCase } = require('lodash');
-const rename = require('gulp-rename');
+const Generator = require("yeoman-generator");
+const { camelCase, kebabCase, snakeCase, startCase } = require("lodash");
+const rename = require("gulp-rename");
 
-const { PATH_APPS } = require('../../../../../particle.root.config');
+const { PATH_APPS } = require("../../../../../particle.root.config");
 
 // The name of a file that indicates a Pattern Lab application
-const PL_APP_CONFIG_FILE = 'patternlab-config.json';
+const PL_APP_CONFIG_FILE = "patternlab-config.json";
 // All Particle apps have a config file
-const PARTICLE_APP_CONFIG_FILE = 'particle.app.config.js';
+const PARTICLE_APP_CONFIG_FILE = "particle.app.config.js";
 // _patterns is sacred
-const PATTERNS_FOLDER = '_patterns';
+const PATTERNS_FOLDER = "_patterns";
 // PL-specific folder within app
-const PL_FOLDER = 'pattern-lab';
+const PL_FOLDER = "pattern-lab";
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -45,7 +45,7 @@ module.exports = class extends Generator {
       PL_FOLDER,
       PATTERNS_FOLDER,
       `${patternType}-demo`,
-      name
+      name,
     );
   }
 
@@ -62,17 +62,15 @@ module.exports = class extends Generator {
   // Reserved: Check for apps and design systems
   initializing() {
     // Build out list of PL apps we want to present to user
-    this.plConfigs = readdirSync(PATH_APPS, 'utf8').reduce((acc, folder) => {
+    this.plConfigs = readdirSync(PATH_APPS, "utf8").reduce((acc, folder) => {
       // We know it's a PL app if it has a patternlab-config.json file
       const plConfig = join(PATH_APPS, folder, PL_APP_CONFIG_FILE);
       if (this.fs.exists(plConfig)) {
         // Pull in config for this PL app
         // eslint-disable-next-line import/no-dynamic-require, global-require
-        const config = require(join(
-          PATH_APPS,
-          folder,
-          PARTICLE_APP_CONFIG_FILE
-        ));
+        const config = require(
+          join(PATH_APPS, folder, PARTICLE_APP_CONFIG_FILE),
+        );
 
         return [...acc, config];
       }
@@ -87,27 +85,27 @@ module.exports = class extends Generator {
     this.log(
       `Hi! This will help you build a component folder with assets. Templates for this are in: ${relative(
         process.cwd(),
-        __dirname
-      )}`
+        __dirname,
+      )}`,
     );
 
     // Prompts presented to user
     const prompts = [
       {
-        type: 'list',
-        name: 'chooseApp',
+        type: "list",
+        name: "chooseApp",
         message:
-          'To which Pattern Lab (and connected design system) would you like to add this component?',
+          "To which Pattern Lab (and connected design system) would you like to add this component?",
         choices: self.plConfigs.map(({ APP_NAME }) => APP_NAME),
       },
       {
-        type: 'list',
-        name: 'patternType',
-        message: 'Where would you like this new component?',
+        type: "list",
+        name: "patternType",
+        message: "Where would you like this new component?",
         choices({ chooseApp }) {
           // Set the config for the app in a shared place
           self.particleApp = self.plConfigs.find(
-            ({ APP_NAME }) => APP_NAME === chooseApp
+            ({ APP_NAME }) => APP_NAME === chooseApp,
           );
           // Design system folder
           const { APP_DESIGN_SYSTEM } = self.particleApp;
@@ -119,8 +117,8 @@ module.exports = class extends Generator {
         },
       },
       {
-        name: 'name',
-        message: 'What shall we name it?',
+        name: "name",
+        message: "What shall we name it?",
         filter(answer) {
           return kebabCase(answer);
         },
@@ -135,7 +133,7 @@ module.exports = class extends Generator {
         upperCaseName: startCase(props.name),
         underscoreName: snakeCase(props.name),
         camelCaseName: camelCase(props.name),
-        cleanPatternType: props.patternType.replace(/([0-9])\w+-/g, ''),
+        cleanPatternType: props.patternType.replace(/([0-9])\w+-/g, ""),
       };
     });
   }
@@ -153,26 +151,26 @@ module.exports = class extends Generator {
         // Original extname was '.ejs', change it to ext, which is now '.twig'
         path.extname = ext;
         // Remove extension ('.twig') from basename, replace 'pattern" with name
-        path.basename = path.basename.replace(ext, '').replace('pattern', name);
+        path.basename = path.basename.replace(ext, "").replace("pattern", name);
         return path;
-      })
+      }),
     );
 
     // Copy and process all design system files
     this.fs.copyTpl(
-      this.templatePath('ds/**/*.ejs'),
+      this.templatePath("ds/**/*.ejs"),
       this._dsComponentPath,
-      this.props
+      this.props,
     );
     // Copy and process all app files
     this.fs.copyTpl(
-      this.templatePath('app/**/*.ejs'),
+      this.templatePath("app/**/*.ejs"),
       this._appComponentPath,
-      this.props
+      this.props,
     );
 
     this.log(
-      `Your new component ${name} is being created, both as a raw component within your design system and demo folder within your Pattern Lab.`
+      `Your new component ${name} is being created, both as a raw component within your design system and demo folder within your Pattern Lab.`,
     );
   }
 };

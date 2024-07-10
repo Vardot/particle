@@ -3,15 +3,15 @@
  */
 
 // eslint-disable-next-line
-import $ from 'jquery';
+import $ from "jquery";
 
 // Custom
-import 'protons';
+import "protons";
 
 // Module template
-import './_button.twig';
+import "./_button.twig";
 
-export const name = 'button';
+export const name = "button";
 
 export function disable() {}
 

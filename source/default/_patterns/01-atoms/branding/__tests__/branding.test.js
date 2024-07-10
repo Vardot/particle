@@ -1,5 +1,5 @@
-import { name } from '..';
+import { name } from "..";
 
-test('branding component is registered', () => {
-  expect(name).toBe('branding');
+test("branding component is registered", () => {
+  expect(name).toBe("branding");
 });

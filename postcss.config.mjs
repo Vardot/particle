@@ -14,14 +14,14 @@ export default ({ options, env }) => {
       stylelint(),
       // tailwindConfig is set per *design system* webpack.config.js.
       tailwindcss({
-        config: './source/default/tailwind.config.js',
+        config: "./source/default/tailwind.config.js",
       }),
       // Hex in rgba like Sass
       hexrgba(),
       // Use .browserslistrc to determine CSS mutations
       postcssPresetEnv(),
       // Heavy processing for production
-      env === 'production' && cssnano(),
+      env === "production" && cssnano(),
       postcssReporter({ clearReportedMessages: true }),
     ],
   };

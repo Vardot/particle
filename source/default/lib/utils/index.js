@@ -15,7 +15,7 @@ export const randRGB = () => Math.round(Math.random() * 255);
  * @returns {Array}
  */
 export const sass2Array = (sassString) =>
-  sassString ? sassString.trim().split(', ') : [];
+  sassString ? sassString.trim().split(", ") : [];
 
 /**
  * Read CSS --variables off of :root and return as an object of var:value
@@ -24,7 +24,7 @@ export const sass2Array = (sassString) =>
  */
 export const cssVars2Obj = () => {
   // Cache $root reference
-  const $root = document.querySelector(':root');
+  const $root = document.querySelector(":root");
 
   /**
    * Actual function used to query :root for CSS vars
@@ -41,7 +41,7 @@ export const cssVars2Obj = () => {
           .toString()
           .trim(),
       }),
-      {}
+      {},
     );
 };
 

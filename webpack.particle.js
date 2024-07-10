@@ -6,12 +6,12 @@
  */
 
 // Library Imports
-const { ProgressPlugin, ProvidePlugin } = require('webpack');
+const { ProgressPlugin, ProvidePlugin } = require("webpack");
 
 // Plugins
-const { VueLoaderPlugin } = require('vue-loader');
-const TerserPlugin = require('terser-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+const { VueLoaderPlugin } = require("vue-loader");
+const TerserPlugin = require("terser-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 // Constants: environment
 // NODE_ENV is set within all NPM scripts before running Webpack, eg:
@@ -22,7 +22,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 // - development
 // - production
 // Defaults to 'production'
-const { NODE_ENV = 'production' } = process.env;
+const { NODE_ENV = "production" } = process.env;
 
 // Enable to track down deprecation during development
 // process.traceDeprecation = true;
@@ -31,17 +31,17 @@ module.exports = {
   // entry: {}, // See entryPrepend() and particle() below for entry details
   mode: NODE_ENV, // development|production
   output: {
-    filename: '[name].js',
+    filename: "[name].js",
   },
-  devtool: NODE_ENV === 'development' ? 'eval' : 'source-map',
+  devtool: NODE_ENV === "development" ? "eval" : "source-map",
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: "vue-loader",
         options: {
           loaders: {
-            js: 'babel-loader',
+            js: "babel-loader",
           },
         },
       },
@@ -49,26 +49,26 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               sourceMap: true,
             },
           },
           {
-            loader: 'resolve-url-loader',
+            loader: "resolve-url-loader",
             options: {
               sourceMap: true,
-              root: '',
+              root: "",
             },
           },
           {
             // PostCSS config at ./postcss.config.js
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               postcssOptions: {
-                ident: 'postcss',
-              }
+                ident: "postcss",
+              },
             },
           },
         ],
@@ -78,23 +78,23 @@ module.exports = {
         // @babel runtime and core must NOT be transformed by babel
         exclude: /@babel(?:\/|\\{1,2})runtime|core-js/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
         },
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: 'images/[name].[ext]?[hash]',
+          name: "images/[name].[ext]?[hash]",
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'fonts/[name].[ext]?[hash]',
+              name: "fonts/[name].[ext]?[hash]",
             },
           },
         ],
@@ -102,7 +102,7 @@ module.exports = {
       // Non-standard assets on the dependency chain
       {
         test: /\.twig$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
           emitFile: false,
         },
@@ -113,29 +113,27 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          sourceMap: NODE_ENV === 'production',
-        }
+          sourceMap: NODE_ENV === "production",
+        },
       }),
     ],
   },
   plugins: [
     new ESLintPlugin({
-      extensions: ['js', 'vue'],
-      exclude: [
-        '/node_modules/'
-      ],
+      extensions: ["js", "vue"],
+      exclude: ["/node_modules/"],
     }),
     // Provides "global" vars mapped to an actual dependency. Allows e.g. jQuery
     // plugins to assume that `window.jquery` is available
     new ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
     }),
     // Handle .vue files
     new VueLoaderPlugin(),
     // Only add ProgressPlugin for non-production env.
-    ...(NODE_ENV === 'production'
+    ...(NODE_ENV === "production"
       ? []
       : [new ProgressPlugin({ profile: false })]),
   ],
@@ -145,7 +143,7 @@ module.exports = {
       // be output via twig, we need the Vue build that includes the whole
       // template compiling engine. If we are on a build that will NEVER read
       // HTML from the DOM and use it as a template, then remove this line.
-      'Vue': 'vue/dist/vue.esm-bundler.js',
+      Vue: "vue/dist/vue.esm-bundler.js",
     },
   },
 };

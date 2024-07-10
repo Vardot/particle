@@ -4,27 +4,27 @@
  * Mount all widgets via the root index.js file.
  */
 
-import 'protons';
-import 'molecules/card';
+import "protons";
+import "molecules/card";
 
 // Module template
-import './_vue-cards.twig';
-import './_vue-clock.twig';
+import "./_vue-cards.twig";
+import "./_vue-clock.twig";
 
 // All Vue widgets only execute on existence of DOM
-import VueCards from 'lib/vue-widget/src/vue-cards';
-import VueClock from 'lib/vue-widget/src/vue-clock';
+import VueCards from "lib/vue-widget/src/vue-cards";
+import VueClock from "lib/vue-widget/src/vue-clock";
 
 // Render Vue elements as soon as possible
-if (document.getElementById('vue-cards')) {
-  VueCards('#vue-cards');
+if (document.getElementById("vue-cards")) {
+  VueCards("#vue-cards");
 }
 
-if (document.getElementById('vue-clock')) {
-  VueClock('#vue-clock');
+if (document.getElementById("vue-clock")) {
+  VueClock("#vue-clock");
 }
 
-export const name = 'vue-widget';
+export const name = "vue-widget";
 
 export function disable() {}
 

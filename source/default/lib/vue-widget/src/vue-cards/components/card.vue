@@ -22,7 +22,7 @@
 // since JavaScript imports are handled by Webpack.
 
 export default {
-  name: 'Card',
+  name: "Card",
   props: {
     id: {
       type: Number,
@@ -30,19 +30,19 @@ export default {
     },
     name: {
       type: String,
-      default: '',
+      default: "",
     },
     phone: {
       type: String,
-      default: '',
+      default: "",
     },
     website: {
       type: String,
-      default: '',
+      default: "",
     },
     email: {
       type: String,
-      default: '',
+      default: "",
     },
     isClicked: {
       type: Boolean,

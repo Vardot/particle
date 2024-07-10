@@ -76,12 +76,12 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   cursor: pointer;
 }
 
-.utc-directory-form .form-radios input[type='radio']:checked + label {
+.utc-directory-form .form-radios input[type="radio"]:checked + label {
   @apply bg-utc-new-gold-300;
 }
 
 /* hides the radio buttons */
-.utc-directory-form .form-radios input[type='radio'] {
+.utc-directory-form .form-radios input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -126,7 +126,7 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   @apply text-black;
 }
 
-.select2-container--default .select2-results__option[aria-selected='true'] {
+.select2-container--default .select2-results__option[aria-selected="true"] {
   @apply bg-utc-new-blue-100;
   @apply text-black;
 }
@@ -212,7 +212,8 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   border: 0;
   border-radius: 0;
   flex-direction: column;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -321,7 +322,7 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
 }
 
 .employee-profile__suffix .field:not(:empty):not(:last-child):after {
-  content: ',';
+  content: ",";
 }
 
 .employee-profile__button a {
@@ -404,7 +405,7 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
 /* adjust name size - this is coming inline from somewhere, can we change in DM? */
 
 .view-utc-directory .dm-profile-activity {
-  font-family: 'Open Sans', san-serif;
+  font-family: "Open Sans", san-serif;
 }
 .view-utc-directory .dm-profile-activity span,
 .employee-profile-page__name {
@@ -494,13 +495,9 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   @apply text-white !important;
 }
 
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item--active,
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item:hover {
-    @apply bg-utc-new-blue-500;
+.view-utc-directory .dm-profile-tabs > .dm-profile-tabs__item--active,
+.view-utc-directory .dm-profile-tabs > .dm-profile-tabs__item:hover {
+  @apply bg-utc-new-blue-500;
 }
 
 /* DM Profile Content */
@@ -531,13 +528,13 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   line-height: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 .view-utc-directory h3.dm-profile-heading {
-  font-family: 'Open Sans', san-serif;
+  font-family: "Open Sans", san-serif;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -561,9 +558,9 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   }
 
   .employee-profile-page__body,
-.view-utc-directory .dm-profile-activities {
-  padding: 1rem;
-}
+  .view-utc-directory .dm-profile-activities {
+    padding: 1rem;
+  }
 
   .view-utc-directory
     .dm-profile-preamble
@@ -572,10 +569,10 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
     width: auto;
   }
 
-.view-utc-directory .dm-profile-preamble,
-.employee-profile-page {
-  background-color: white;
-}
+  .view-utc-directory .dm-profile-preamble,
+  .employee-profile-page {
+    background-color: white;
+  }
 }
 @media (min-width: 1024px) {
   .view-utc-directory .dm-profile-section--main-image,
@@ -620,29 +617,25 @@ at the template level in apps/drupal-default/particle_theme/templates/views/view
   }
 
   .view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item--active
-  > .dm-profile-tabs__link,
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item:hover
-  > .dm-profile-tabs__link {
-  @apply text-utc-new-blue-500 !important;
-}
+    .dm-profile-tabs
+    > .dm-profile-tabs__item--active
+    > .dm-profile-tabs__link,
+  .view-utc-directory
+    .dm-profile-tabs
+    > .dm-profile-tabs__item:hover
+    > .dm-profile-tabs__link {
+    @apply text-utc-new-blue-500 !important;
+  }
 
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item
-  > .dm-profile-tabs__link {
-  box-shadow: none;
-  @apply text-utc-new-blue-400;
-}
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item--active,
-.view-utc-directory
-  .dm-profile-tabs
-  > .dm-profile-tabs__item:hover {
+  .view-utc-directory
+    .dm-profile-tabs
+    > .dm-profile-tabs__item
+    > .dm-profile-tabs__link {
+    box-shadow: none;
+    @apply text-utc-new-blue-400;
+  }
+  .view-utc-directory .dm-profile-tabs > .dm-profile-tabs__item--active,
+  .view-utc-directory .dm-profile-tabs > .dm-profile-tabs__item:hover {
     @apply bg-utc-new-blue-100;
-}
+  }
 }

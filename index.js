@@ -3,13 +3,13 @@
  */
 
 // ECMAScript polyfills, but NOT fetch(). Fetch() is web standard, not ECMAScript.
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 // import './../../../../docroot/core/assets/vendor/jquery.ui';
 
-import { enableAllComponents } from './source/default';
+import { enableAllComponents } from "./source/default";
 
-console.log('Particle Drupal behaviors ran.');
+console.log("Particle Drupal behaviors ran.");
 
 Drupal.behaviors.designSystem = {
   attach($context, settings) {

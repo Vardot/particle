@@ -1,6 +1,6 @@
-import * as Vue from 'vue'
+import * as Vue from "vue";
 
-import Clock from './vue-clock.vue';
+import Clock from "./vue-clock.vue";
 
 export default (el) =>
   new Vue({

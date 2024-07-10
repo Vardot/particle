@@ -3,7 +3,7 @@
  */
 
 // eslint-disable-next-line
-const backstop = require('backstopjs');
-const backstopConfig = require('./backstop-example-settings.js')();
+const backstop = require("backstopjs");
+const backstopConfig = require("./backstop-example-settings.js")();
 
-backstop('test', { config: backstopConfig });
+backstop("test", { config: backstopConfig });

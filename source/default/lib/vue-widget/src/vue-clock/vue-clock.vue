@@ -33,7 +33,7 @@
  * - Classes as dynamic computed values * - The power of transform() in CSS
  */
 export default {
-  name: 'VueClock',
+  name: "VueClock",
   data() {
     return {
       now: new Date(),
@@ -72,14 +72,14 @@ export default {
     dynamicClasses() {
       const { seconds } = this.time;
       return {
-        'bg-gray-500': seconds >= 0 && seconds < 8,
-        'bg-red-500': seconds >= 8 && seconds < 16,
-        'bg-orange-500': seconds >= 16 && seconds < 24,
-        'bg-yellow-500': seconds >= 24 && seconds < 32,
-        'bg-green-500': seconds >= 32 && seconds < 40,
-        'bg-teal-500': seconds >= 40 && seconds < 48,
-        'bg-blue-500': seconds >= 48 && seconds < 56,
-        'bg-purple-500': seconds >= 56 && seconds <= 60,
+        "bg-gray-500": seconds >= 0 && seconds < 8,
+        "bg-red-500": seconds >= 8 && seconds < 16,
+        "bg-orange-500": seconds >= 16 && seconds < 24,
+        "bg-yellow-500": seconds >= 24 && seconds < 32,
+        "bg-green-500": seconds >= 32 && seconds < 40,
+        "bg-teal-500": seconds >= 40 && seconds < 48,
+        "bg-blue-500": seconds >= 48 && seconds < 56,
+        "bg-purple-500": seconds >= 56 && seconds <= 60,
       };
     },
   },
@@ -110,7 +110,7 @@ export default {
   transform-origin: 100%;
 }
 .hand::after {
-  content: '';
+  content: "";
   @apply block absolute top-0 right-0 bottom-0 left-0 bg-black;
 }
 </style>

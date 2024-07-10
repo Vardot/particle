@@ -2,22 +2,22 @@
  * image
  */
 
-import $ from 'jquery';
+import $ from "jquery";
 
 // Module dependencies
-import 'protons';
+import "protons";
 
 // Module template
-import './_image.twig';
-import './_image--bg.twig';
-import './_image--picture.twig';
-import './_image--placeholder.twig';
-import './_image--primary.twig';
+import "./_image.twig";
+import "./_image--bg.twig";
+import "./_image--picture.twig";
+import "./_image--placeholder.twig";
+import "./_image--primary.twig";
 
-export const name = 'image';
+export const name = "image";
 
 export const defaults = {
-  dummyClass: 'js-image-exists',
+  dummyClass: "js-image-exists",
 };
 
 /**
@@ -40,7 +40,7 @@ export function disable($context, settings) {}
  */
 export function enable($context, { image = {} }) {
   // Find our component within the DOM
-  const $image = $('.image', $context);
+  const $image = $(".image", $context);
   // Bail if component does not exist
   if (!$image.length) {
     return;

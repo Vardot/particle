@@ -3,12 +3,12 @@
  */
 
 // Module Dependencies
-import 'protons';
+import "protons";
 
 // Module template
-import './_alert.twig';
+import "./_alert.twig";
 
-export const name = 'alert';
+export const name = "alert";
 
 export function disable() {}
 

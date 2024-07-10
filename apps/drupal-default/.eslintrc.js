@@ -1,11 +1,11 @@
-const { resolve } = require('path');
+const { resolve } = require("path");
 
 module.exports = {
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       node: {},
       webpack: {
-        config: resolve(__dirname, './webpack.config.js'),
+        config: resolve(__dirname, "./webpack.config.js"),
       },
     },
   },

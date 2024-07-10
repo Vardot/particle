@@ -49,7 +49,9 @@
 /* hover state for teaser cards if linked */
 a .employee-card--utc-small-teaser-card:hover {
   @apply bg-gray-200;
-  box-shadow: 0 10px 15px -3px rgba(#000, 0.2), 0 4px 6px -2px rgba(#000, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(#000, 0.2),
+    0 4px 6px -2px rgba(#000, 0.05);
 }
 
 /* base for all employee card types */
@@ -63,7 +65,8 @@ a .employee-card--utc-small-teaser-card:hover {
   word-wrap: break-word;
   border: 0;
   border-radius: 0;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -125,7 +128,7 @@ a .employee-card--utc-small-teaser-card:hover {
   display: inline-block;
 }
 
-.employee-card__suffix .field:not(:empty):not(:last-child):after{
+.employee-card__suffix .field:not(:empty):not(:last-child):after {
   content: ",";
 }
 

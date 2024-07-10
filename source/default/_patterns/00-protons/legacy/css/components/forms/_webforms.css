@@ -38,20 +38,20 @@
   margin-top: 5px;
 }
 
-.webform-submission-form input[type='text'],
-.webform-submission-form input[type='time'],
-.webform-submission-form input[type='url'],
-.webform-submission-form input[type='password'],
-.webform-submission-form input[type='color'],
-.webform-submission-form input[type='week'],
-.webform-submission-form input[type='date'],
-.webform-submission-form input[type='tel'],
-.webform-submission-form input[type='email'],
-.webform-submission-form input[type='number'],
-.webform-submission-form input[type='datetime-local'],
-.webform-submission-form input[type='range'],
-.webform-submission-form input[type='month'],
-.webform-submission-form input[type='search'],
+.webform-submission-form input[type="text"],
+.webform-submission-form input[type="time"],
+.webform-submission-form input[type="url"],
+.webform-submission-form input[type="password"],
+.webform-submission-form input[type="color"],
+.webform-submission-form input[type="week"],
+.webform-submission-form input[type="date"],
+.webform-submission-form input[type="tel"],
+.webform-submission-form input[type="email"],
+.webform-submission-form input[type="number"],
+.webform-submission-form input[type="datetime-local"],
+.webform-submission-form input[type="range"],
+.webform-submission-form input[type="month"],
+.webform-submission-form input[type="search"],
 .webform-submission-form textarea,
 .webform-submission-form select {
   box-shadow: none;
@@ -62,61 +62,63 @@
   @apply text-utc-new-blue-500;
 }
 
-.webform-submission-form input[type='text']::placeholder,
-.webform-submission-form input[type='time']::placeholder,
-.webform-submission-form input[type='url']::placeholder,
-.webform-submission-form input[type='password']::placeholder,
-.webform-submission-form input[type='color']::placeholder,
-.webform-submission-form input[type='week']::placeholder,
-.webform-submission-form input[type='date']::placeholder,
-.webform-submission-form input[type='tel']::placeholder,
-.webform-submission-form input[type='email']::placeholder,
-.webform-submission-form input[type='number']::placeholder,
-.webform-submission-form input[type='datetime-local']::placeholder,
-.webform-submission-form input[type='range']::placeholder,
-.webform-submission-form input[type='month']::placeholder,
-.webform-submission-form input[type='search']::placeholder,
+.webform-submission-form input[type="text"]::placeholder,
+.webform-submission-form input[type="time"]::placeholder,
+.webform-submission-form input[type="url"]::placeholder,
+.webform-submission-form input[type="password"]::placeholder,
+.webform-submission-form input[type="color"]::placeholder,
+.webform-submission-form input[type="week"]::placeholder,
+.webform-submission-form input[type="date"]::placeholder,
+.webform-submission-form input[type="tel"]::placeholder,
+.webform-submission-form input[type="email"]::placeholder,
+.webform-submission-form input[type="number"]::placeholder,
+.webform-submission-form input[type="datetime-local"]::placeholder,
+.webform-submission-form input[type="range"]::placeholder,
+.webform-submission-form input[type="month"]::placeholder,
+.webform-submission-form input[type="search"]::placeholder,
 .webform-submission-form select::placeholder,
 .webform-submission-form textarea::placeholder {
   @apply text-utc-new-blue-400;
 }
 
-.webform-submission-form input[type='text']:focus,
-.webform-submission-form input[type='time']:focus,
-.webform-submission-form input[type='url']:focus,
-.webform-submission-form input[type='password']:focus,
-.webform-submission-form input[type='color']:focus,
-.webform-submission-form input[type='week']:focus,
-.webform-submission-form input[type='date']:focus,
-.webform-submission-form input[type='tel']:focus,
-.webform-submission-form input[type='email']:focus,
-.webform-submission-form input[type='number']:focus,
-.webform-submission-form input[type='datetime-local']:focus,
-.webform-submission-form input[type='range']:focus,
-.webform-submission-form input[type='month']:focus,
-.webform-submission-form input[type='search']:focus,
+.webform-submission-form input[type="text"]:focus,
+.webform-submission-form input[type="time"]:focus,
+.webform-submission-form input[type="url"]:focus,
+.webform-submission-form input[type="password"]:focus,
+.webform-submission-form input[type="color"]:focus,
+.webform-submission-form input[type="week"]:focus,
+.webform-submission-form input[type="date"]:focus,
+.webform-submission-form input[type="tel"]:focus,
+.webform-submission-form input[type="email"]:focus,
+.webform-submission-form input[type="number"]:focus,
+.webform-submission-form input[type="datetime-local"]:focus,
+.webform-submission-form input[type="range"]:focus,
+.webform-submission-form input[type="month"]:focus,
+.webform-submission-form input[type="search"]:focus,
 .webform-submission-form select:focus,
-.webform-submission-form input[type='text']:active,
-.webform-submission-form input[type='time']:active,
-.webform-submission-form input[type='url']:active,
-.webform-submission-form input[type='password']:active,
-.webform-submission-form input[type='color']:active,
-.webform-submission-form input[type='week']:active,
-.webform-submission-form input[type='date']:active,
-.webform-submission-form input[type='tel']:active,
-.webform-submission-form input[type='email']:active,
-.webform-submission-form input[type='number']:active,
-.webform-submission-form input[type='datetime-local']:active,
-.webform-submission-form input[type='range']:active,
-.webform-submission-form input[type='month']:active,
-.webform-submission-form input[type='search']:active {
+.webform-submission-form input[type="text"]:active,
+.webform-submission-form input[type="time"]:active,
+.webform-submission-form input[type="url"]:active,
+.webform-submission-form input[type="password"]:active,
+.webform-submission-form input[type="color"]:active,
+.webform-submission-form input[type="week"]:active,
+.webform-submission-form input[type="date"]:active,
+.webform-submission-form input[type="tel"]:active,
+.webform-submission-form input[type="email"]:active,
+.webform-submission-form input[type="number"]:active,
+.webform-submission-form input[type="datetime-local"]:active,
+.webform-submission-form input[type="range"]:active,
+.webform-submission-form input[type="month"]:active,
+.webform-submission-form input[type="search"]:active {
   border: 2px solid;
   @apply border-utc-new-blue-500;
   transition: 0.25s;
   --tw-ring-offset-width: 2px;
   --tw-ring-color: rgba(196, 203, 212, 0.4);
   --tw-ring-offset-color: transparent;
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+  box-shadow:
+    var(--tw-ring-offset-shadow),
+    var(--tw-ring-shadow),
     0 0 rgba(0, 0, 0, 0);
 }
 
@@ -128,36 +130,38 @@
   --tw-ring-offset-width: 2px;
   --tw-ring-color: rgba(196, 203, 212, 0.4);
   --tw-ring-offset-color: transparent;
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+  box-shadow:
+    var(--tw-ring-offset-shadow),
+    var(--tw-ring-shadow),
     0 0 rgba(0, 0, 0, 0);
 }
 
 /* radio and checkbox */
 
-.webform-submission-form [type='checkbox'],
-.webform-submission-form [type='radio'] {
+.webform-submission-form [type="checkbox"],
+.webform-submission-form [type="radio"] {
   margin-right: 2px;
   margin-left: 2px;
 }
 
-.webform-submission-form [type='checkbox']:checked:focus,
-.webform-submission-form [type='radio']:checked:focus,
-.webform-submission-form [type='checkbox']:checked:hover,
-.webform-submission-form [type='radio']:checked:hover,
-.webform-submission-form [type='checkbox']:checked,
-.webform-submission-form [type='radio']:checked {
+.webform-submission-form [type="checkbox"]:checked:focus,
+.webform-submission-form [type="radio"]:checked:focus,
+.webform-submission-form [type="checkbox"]:checked:hover,
+.webform-submission-form [type="radio"]:checked:hover,
+.webform-submission-form [type="checkbox"]:checked,
+.webform-submission-form [type="radio"]:checked {
   @apply bg-utc-new-blue-400;
 }
 
-.webform-submission-form [type='checkbox']:focus,
-.webform-submission-form [type='radio']:focus {
+.webform-submission-form [type="checkbox"]:focus,
+.webform-submission-form [type="radio"]:focus {
   --tw-ring-color: rgba(196, 203, 212);
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: transparent;
 }
 
-.webform-submission-form [type='checkbox']:checked:focus,
-.webform-submission-form [type='radio']:checked:focus {
+.webform-submission-form [type="checkbox"]:checked:focus,
+.webform-submission-form [type="radio"]:checked:focus {
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: transparent;
   --tw-ring-color: rgba(196, 203, 212);

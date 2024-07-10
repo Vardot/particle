@@ -2,22 +2,22 @@
  * grid
  */
 
-import $ from 'jquery';
+import $ from "jquery";
 
 // Module dependencies
-import 'protons';
+import "protons";
 
 // Module template
-import './_grid.twig';
-import './_grid--1-up.twig';
-import './_grid--2-up.twig';
-import './_grid--3-up.twig';
-import './_grid--4-up.twig';
+import "./_grid.twig";
+import "./_grid--1-up.twig";
+import "./_grid--2-up.twig";
+import "./_grid--3-up.twig";
+import "./_grid--4-up.twig";
 
-export const name = 'grid';
+export const name = "grid";
 
 export const defaults = {
-  dummyClass: 'js-grid-exists',
+  dummyClass: "js-grid-exists",
 };
 
 /**
@@ -40,7 +40,7 @@ export function disable($context, settings) {}
  */
 export function enable($context, { grid = {} }) {
   // Find our component within the DOM
-  const $grid = $('.grid', $context);
+  const $grid = $(".grid", $context);
   // Bail if component does not exist
   if (!$grid.length) {
     return;

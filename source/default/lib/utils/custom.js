@@ -1,4 +1,3 @@
-(function($, Drupal, drupalSettings) {
+(function ($, Drupal, drupalSettings) {
   "use strict";
-
-}(jQuery, Drupal, drupalSettings));
+})(jQuery, Drupal, drupalSettings);

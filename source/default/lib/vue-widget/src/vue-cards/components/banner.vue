@@ -24,20 +24,20 @@
  * - Utility functions used within methods()
  */
 
-import { randRGB } from 'lib/utils';
+import { randRGB } from "lib/utils";
 
 export default {
-  name: 'Banner',
+  name: "Banner",
   props: {
     username: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {
     return {
-      bg: 'rgba(0,0,0,1)',
-      message: 'Click me! I change color! Click cards!',
+      bg: "rgba(0,0,0,1)",
+      message: "Click me! I change color! Click cards!",
     };
   },
   computed: {

@@ -1,12 +1,12 @@
 /**
  * Merge shared jest config with local design system config
  */
-const path = require('path');
-const { merge } = require('lodash');
-const sharedConfig = require('../../jest.config');
-const namespaces = require('./namespaces');
+const path = require("path");
+const { merge } = require("lodash");
+const sharedConfig = require("../../jest.config");
+const namespaces = require("./namespaces");
 
-const rootDir = '../../';
+const rootDir = "../../";
 // i.e. source/default
 const dsPath = path.relative(path.join(__dirname, rootDir), __dirname);
 /**
@@ -29,7 +29,7 @@ const moduleNameMapper = Object.keys(namespaces).reduce((acc, entry) => {
   // i.e source/default/_patterns/04-templates
   const namePath = path.relative(
     path.join(__dirname, rootDir),
-    namespaces[entry]
+    namespaces[entry],
   );
   // i.e. moduleNameMapper['^protons[/]?(.*)'] = '<rootDir>/source/default/_patterns/00-protons/$1';
   acc[nameRegex] = `<rootDir>/${namePath}/$1`;

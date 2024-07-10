@@ -1,7 +1,7 @@
 module.exports = (theme) => ({
   default: {
     input: {
-      borderRadius: theme('borderRadius.none'),
+      borderRadius: theme("borderRadius.none"),
     },
   },
 });

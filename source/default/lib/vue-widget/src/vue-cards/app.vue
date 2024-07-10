@@ -26,11 +26,11 @@
  * reach for VueX when we start communicating between components more.
  */
 
-import cards from './components/cards.vue';
-import banner from './components/banner.vue';
+import cards from "./components/cards.vue";
+import banner from "./components/banner.vue";
 
 export default {
-  name: 'VueCardsApp',
+  name: "VueCardsApp",
   components: {
     cards,
     banner,
@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       cardsArray: [],
-      cardName: '',
+      cardName: "",
     };
   },
   // Fetch data on creation of widget
@@ -49,7 +49,7 @@ export default {
     // Fetch data, ensure the incoming data has all attributes we need
     async getCards() {
       this.cardsArray = await (
-        await fetch('https://jsonplaceholder.typicode.com/users')
+        await fetch("https://jsonplaceholder.typicode.com/users")
       ).json();
     },
   },

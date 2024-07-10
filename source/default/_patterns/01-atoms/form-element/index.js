@@ -3,17 +3,17 @@
  */
 
 // eslint-disable-next-line
-import $ from 'jquery';
+import $ from "jquery";
 
 // Module dependencies
-import 'protons';
+import "protons";
 
 // Module template
-import './_input.twig';
-import './_select.twig';
-import './_textarea.twig';
+import "./_input.twig";
+import "./_select.twig";
+import "./_textarea.twig";
 
-export const name = 'form-element';
+export const name = "form-element";
 
 export function disable() {}
 

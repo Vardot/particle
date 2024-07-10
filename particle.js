@@ -1,12 +1,12 @@
 /**
  * Particle app to merge webpack config.
  */
-const path = require('path');
+const path = require("path");
 
 // Library Imports
-const { mergeWithRules } = require('webpack-merge');
+const { mergeWithRules } = require("webpack-merge");
 // Plugins:production
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Constants
 // NODE_ENV is set within all NPM scripts before running webpack, eg:
@@ -18,7 +18,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // - production
 const { NODE_ENV } = process.env;
 
-const particleBase = require('./webpack.particle');
+const particleBase = require("./webpack.particle");
 
 /**
  * CSS modes are import to frontend dev. Particle currently supports hot
@@ -34,9 +34,7 @@ const cssModes = {
       rules: [
         {
           test: /\.css$/,
-          use: [
-            'style-loader',
-          ],
+          use: ["style-loader"],
         },
       ],
     },
@@ -52,7 +50,7 @@ const cssModes = {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: { publicPath: './' },
+              options: { publicPath: "./" },
             },
           ],
         },
@@ -60,8 +58,8 @@ const cssModes = {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].styles.css',
-        chunkFilename: '[id].css',
+        filename: "[name].styles.css",
+        chunkFilename: "[id].css",
       }),
     ],
   },
@@ -86,7 +84,7 @@ const particle = (appWebpack, appConfig, options) => {
 
   // Dynamically pull in design system config. Must be named webpack.config.js
   // eslint-disable-next-line
-  const dsWebpack = require(path.resolve(APP_DESIGN_SYSTEM, 'webpack.config'));
+  const dsWebpack = require(path.resolve(APP_DESIGN_SYSTEM, "webpack.config"));
 
   return mergeWithRules({
     module: {
@@ -99,13 +97,13 @@ const particle = (appWebpack, appConfig, options) => {
     // Particle standard config
     particleBase,
     // What kind of CSS handling, defaults to extract
-    options.cssMode ? cssModes[options.cssMode] : 'extract',
+    options.cssMode ? cssModes[options.cssMode] : "extract",
     // Design system-specific config
     dsWebpack,
     // App config shared between dev and prod modes
     shared,
     // App config specific to dev or prod
-    NODE_ENV === 'development' ? dev : prod
+    NODE_ENV === "development" ? dev : prod,
   );
 };
 

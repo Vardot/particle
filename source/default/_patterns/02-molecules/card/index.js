@@ -3,14 +3,14 @@
  */
 
 // Module dependencies
-import 'protons';
-import 'atoms/image';
-import 'atoms/button';
+import "protons";
+import "atoms/image";
+import "atoms/button";
 
 // Module template
-import './_card.twig';
+import "./_card.twig";
 
-export const name = 'card';
+export const name = "card";
 
 export function disable() {}
 export function enable() {}

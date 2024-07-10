@@ -2,11 +2,11 @@
  * Article
  */
 // Module dependencies
-import 'protons';
+import "protons";
 // Module template
-import './_article.twig';
+import "./_article.twig";
 
-export const name = 'article';
+export const name = "article";
 export function disable() {}
 export function enable() {}
 export default enable;

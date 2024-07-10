@@ -1,5 +1,5 @@
-import { name } from '..';
+import { name } from "..";
 
-test('card component is registered', () => {
-  expect(name).toBe('card');
+test("card component is registered", () => {
+  expect(name).toBe("card");
 });

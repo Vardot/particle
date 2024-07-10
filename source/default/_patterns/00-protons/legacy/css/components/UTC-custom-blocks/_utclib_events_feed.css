@@ -21,7 +21,8 @@
   border: 0;
   border-radius: 0;
   margin-top: 10px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -48,12 +49,12 @@ a.lib-events-box__link:hover {
 }
 
 .lib-events-box__event-date-day {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.25rem;
   line-height: 2.25rem;
 }
 .lib-events-box__event-date-month {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 1rem;
   text-transform: uppercase;
@@ -66,7 +67,7 @@ a.lib-events-box__link:hover {
   flex-direction: column;
 }
 .lib-events-box__item-title {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -130,7 +131,8 @@ a.lib-events-box__link:hover {
   border: 0;
   border-radius: 0;
   margin-top: 20px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -161,14 +163,14 @@ a.lib-events-box__link:hover {
 }
 
 .lib-event-card__event-date-day {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3.25rem;
   line-height: 3.25rem;
   display: block;
   text-align: center;
 }
 .lib-event-card__event-date-month {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   text-transform: uppercase;

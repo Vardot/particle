@@ -3,14 +3,14 @@
  */
 
 // Module dependencies
-import 'protons';
-import 'atoms/image';
-import './logo.svg';
+import "protons";
+import "atoms/image";
+import "./logo.svg";
 
 // Module template
-import './_branding.twig';
+import "./_branding.twig";
 
-export const name = 'branding';
+export const name = "branding";
 
 export function disable() {}
 

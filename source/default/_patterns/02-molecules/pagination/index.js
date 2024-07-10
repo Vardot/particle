@@ -3,12 +3,12 @@
  */
 
 // Module dependencies
-import 'protons';
+import "protons";
 
 // Module template
-import './_pagination.twig';
+import "./_pagination.twig";
 
-export const name = 'pagination';
+export const name = "pagination";
 export function disable() {}
 export function enable() {}
 export default enable;

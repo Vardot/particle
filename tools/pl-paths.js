@@ -6,7 +6,7 @@ const {
   patternPaths,
   navItems,
   // eslint-disable-next-line import/no-unresolved
-} = require('../dist/app-pl/pl/styleguide/data/patternlab-data.cjs.js');
+} = require("../dist/app-pl/pl/styleguide/data/patternlab-data.cjs.js");
 
 // Shape of patternPaths data:
 //
@@ -23,15 +23,15 @@ const {
 
 // all particle paths
 const paths = [].concat(
-  ...Object.values(patternPaths).map((atomic) => Object.values(atomic))
+  ...Object.values(patternPaths).map((atomic) => Object.values(atomic)),
 );
 
 // only check our actual components from atoms up
-delete patternPaths['protons-demo'];
+delete patternPaths["protons-demo"];
 // eslint-disable-next-line
-delete patternPaths['atoms-demo']['svgicons'];
+delete patternPaths["atoms-demo"]["svgicons"];
 const componentPaths = [].concat(
-  ...Object.values(patternPaths).map((atomic) => Object.values(atomic))
+  ...Object.values(patternPaths).map((atomic) => Object.values(atomic)),
 );
 
 // Shape of navItems data:
@@ -62,14 +62,14 @@ const partials = navItems.patternTypes.reduce(
   (accumulated, { patternTypeItems }) => {
     patternTypeItems.forEach(({ patternSubtypeItems }) => {
       patternSubtypeItems.forEach(({ patternName, patternPartial }) => {
-        if (patternName !== 'View All') {
+        if (patternName !== "View All") {
           accumulated.push(patternPartial);
         }
       });
     });
     return accumulated;
   },
-  []
+  [],
 );
 
 module.exports = {
@@ -77,6 +77,6 @@ module.exports = {
   partials,
   htmlPaths: paths.map((path) => `patterns/${path}/${path}.rendered.html`),
   componentPaths: componentPaths.map(
-    (path) => `patterns/${path}/${path}.rendered.html`
+    (path) => `patterns/${path}/${path}.rendered.html`,
   ),
 };
