@@ -1,27 +1,31 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-param-reassign: 0 */
+/* eslint object-shorthand: 0 */
+/* eslint no-undef: 0 */
+/* eslint func-names: 0 */
+/* eslint prefer-const: 0 */
+/* eslint no-plusplus: 0 */
 (function ($, Drupal, drupalSettings) {
-  "use strict";
-
   Drupal.behaviors.superfishaccessibilityattributes = {
     attach: function (context, settings) {
-      //console.log("sf accessibility js loaded.");
-      var getSfLink = document.querySelectorAll(
+      // console.log("sf accessibility js loaded.");
+      let getSfLink = document.querySelectorAll(
         ".accessibility-link-attributes",
       );
-      var i;
+      let i;
       for (i = 0; i < getSfLink.length; i++) {
         getSfLink[i].title = getSfLink[i].textContent;
         getSfLink[i].setAttribute("role", "link");
         getSfLink[i].setAttribute("aria-label", getSfLink[i].textContent);
       }
-      var getSfLink2 = document.querySelectorAll(".twm-link");
-      var i;
+      let getSfLink2 = document.querySelectorAll(".twm-link");
       for (i = 0; i < getSfLink2.length; i++) {
         getSfLink2[i].title = getSfLink2[i].textContent;
         getSfLink2[i].setAttribute("role", "link");
         getSfLink2[i].setAttribute("aria-label", getSfLink2[i].textContent);
       }
-      var getMobileBtn = document.querySelector("#mobile-menu-icon");
-      var getMobileMenu = document.querySelector("#mobile-menu");
+      let getMobileBtn = document.querySelector("#mobile-menu-icon");
+      let getMobileMenu = document.querySelector("#mobile-menu");
 
       function mobileIconAccessibilityAttr() {
         if (window.matchMedia("(max-width: 768px)").matches) {

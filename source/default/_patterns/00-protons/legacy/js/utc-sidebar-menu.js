@@ -1,6 +1,10 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-param-reassign: 0 */
+/* eslint object-shorthand: 0 */
+/* eslint no-undef: 0 */
+/* eslint func-names: 0 */
+/* eslint no-unused-vars: 0 */
 (function ($, Drupal, drupalSettings) {
-  "use strict";
-
   Drupal.behaviors.sidebarmenu = {
     attach: function (context, settings) {
       $(document).delegate(".utc-sidebar .more.open", "click", function () {

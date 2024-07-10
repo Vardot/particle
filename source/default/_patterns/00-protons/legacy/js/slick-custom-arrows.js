@@ -1,6 +1,10 @@
+/* eslint func-names: 0 */
+/* eslint no-unused-vars: 0 */
+/* eslint no-param-reassign: 0 */
+/* eslint object-shorthand: 0 */
+/* eslint no-undef: 0 */
 (function ($, Drupal, drupalSettings) {
-  "use strict";
-  //Adds slick arrows
+  // Adds slick arrows
   Drupal.behaviors.slickcustomarrows = {
     attach: function (context, settings) {
       if ($(".slick-next").children().length === 0) {

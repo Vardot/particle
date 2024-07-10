@@ -1,8 +1,15 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-param-reassign: 0 */
+/* eslint object-shorthand: 0 */
+/* eslint no-undef: 0 */
+/* eslint func-names: 0 */
+/* eslint prefer-template: 0 */
+/* eslint prefer-const: 0 */
+/* eslint vars-on-top: 0 */
 (function ($, Drupal, drupalSettings) {
-  "use strict";
   Drupal.behaviors.academicprograms = {
     attach: function (context, settings) {
-      //console.log("utc-academic-programs.js is loaded.")
+      // console.log("utc-academic-programs.js is loaded.")
       if (window.location.href.indexOf("majors-overview") > -1) {
         $("body").addClass("utc-programs-page");
       }
@@ -13,10 +20,10 @@
           $(".program-table thead").removeClass("scrolled");
         }
       });
-      var programHeadline = $(
+      let programHeadline = $(
         ".utc-programs-page .program-page-title-and-crumbs",
       );
-      var programOverlay = $(".utc-programs-page .program-overlay");
+      let programOverlay = $(".utc-programs-page .program-overlay");
 
       $(programOverlay).css({ "z-index": "-1", opacity: ".75" });
       $(".utcloadingcontainer").css("display", "none");
@@ -31,8 +38,8 @@
       }
       function togglediv(getProgramBtnDetailId) {
         $(".offscreen-program-details").each(function () {
-          var detailId = $(this).attr("id");
-          if (detailId == getProgramBtnDetailId) {
+          let detailId = $(this).attr("id");
+          if (detailId === getProgramBtnDetailId) {
             $(".offscreen-program-details")
               .css("right", "-650px")
               .removeClass("detail-open");
@@ -42,13 +49,13 @@
         });
       }
       $(".program-btn").each(function () {
-        var getProgramBtnDetailId = $(this).attr("data-src");
+        let getProgramBtnDetailId = $(this).attr("data-src");
         $(this).on("click", function () {
           togglediv(getProgramBtnDetailId);
         });
       });
       $(".close-btn").each(function () {
-        var parentId = $(this).closest(".offscreen-program-details").attr("id");
+        let parentId = $(this).closest(".offscreen-program-details").attr("id");
         $(this).on("click", function () {
           $("#" + parentId).css("right", "-650px");
           unghostMainContent();

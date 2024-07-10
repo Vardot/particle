@@ -1,10 +1,16 @@
+/* eslint func-names: 0 */
+/* eslint no-unused-vars: 0 */
+/* eslint no-param-reassign: 0 */
+/* eslint object-shorthand: 0 */
+/* eslint no-use-before-define: 0 */
+/* eslint no-inner-declarations: 0 */
+/* eslint no-undef: 0 */
 (function ($, Drupal, drupalSettings) {
-  "use strict";
-  //Adds slick arrows
+  // Adds slick arrows
   Drupal.behaviors.backtotopbutton = {
     attach: function (context, settings) {
       // Get the button:
-      let scrollButton = document.getElementById("scroll-to-top-btn");
+      const scrollButton = document.getElementById("scroll-to-top-btn");
       if (scrollButton) {
         scrollButton.style.display = "none";
 
