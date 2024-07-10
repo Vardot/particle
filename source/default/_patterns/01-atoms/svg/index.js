@@ -1,7 +1,4 @@
-/**
- * svg
- */
-
+/* eslint no-unused-vars: 0 */
 import $ from "jquery";
 import svg4everybody from "svg4everybody";
 
