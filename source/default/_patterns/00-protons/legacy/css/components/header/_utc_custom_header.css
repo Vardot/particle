@@ -148,9 +148,6 @@ ul.sf-menu span.sf-sub-indicator {
 .sidr.right {
   right: -100%;
 }
-.sidr .block {
-  @apply mb-0 h-auto;
-}
 .sidr ul.flex,
 .block--region-offcanvas-sidebar {
   @apply bg-white;

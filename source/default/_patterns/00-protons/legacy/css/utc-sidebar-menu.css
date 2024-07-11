@@ -125,7 +125,7 @@
 
 /**subordinate active buttons in submenus to parent***/
 li.menu-item-sidemenu li.menu-item-sidemenu .is-active {
-  @apply bg-utc-new-blue-200 !important text-utc-new-blue-500 !important;
+  @apply bg-utc-new-blue-200 text-utc-new-blue-500 !important;
 }
 li.menu-item-sidemenu li.menu-item-sidemenu .is-active:before {
   @apply mr-2 font-bold text-base;
