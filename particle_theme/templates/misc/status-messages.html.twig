@@ -31,34 +31,57 @@
 
 {% for type, messages in message_list %}
   <div role="contentinfo" aria-label="{{ status_heading[type] }}" {{ attributes|without('role', 'aria-label') }}>
-    {% embed '@atoms/alert/_alert.twig' %}
-      {% block alert_header %}
-        <a href="#" role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}">
-          {# Not used as this action requires javascript #}
-          {# <span aria-hidden="true">&times;</span> #}
-        </a>
-        {% if status_headings[type] %}
-          <h2 class="visually-hidden">
-            {{ status_headings[type] }}
-          </h2>
-        {% endif %}
-      {% endblock alert_header %}
-      {% block alert_content %}
-        {% if (messages|length) > 1 %}
-          {% for message in messages %}
-            <div>
-              {{ message }}
-            </div>
-          {% endfor %}
-        {% else %}
-          <div>
-            {{ messages|first }}
-          </div>
-        {% endif %}
-      {% endblock alert_content %}
-      {% block alert_footer %}
+    {% set status_bg = {
+      status: 'bg-green-200',
+      error: 'bg-red-200',
+      warning: 'bg-yellow-200',
+      info: 'bg-blue-200'
+    } %}
+    {% set status_text = {
+      status: 'text-green-800',
+      error: 'text-red-800',
+      warning: 'text-yellow-800',
+      info: 'text-blue-800'
+    } %}
 
-      {% endblock alert_footer %}
-    {% endembed %}
+    {% set alert_classes =
+      [
+        'mb-0',
+        'alert',
+        status_bg[type],
+        status_text[type],
+        'alert-dismissible',
+        'fade',
+        'show',
+        'rounded',
+        'relative',
+        alert_other_classes
+      ]
+        |join(' ')
+        |trim
+    %}
+    {% set alert_degree = type == 'error' ? 'role=alert' : 'aria-live=polite' %}
+    <div class="p-4 {{ alert_classes }}" {{ alert_degree }}>
+      <a href="#" role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}">
+        {# Not used as this action requires javascript #}
+        {# <span aria-hidden="true">&times;</span> #}
+      </a>
+      {% if status_headings[type] %}
+        <h2 class="visually-hidden">
+          {{ status_headings[type] }}
+        </h2>
+      {% endif %}
+      {% if (messages|length) > 1 %}
+        {% for message in messages %}
+          <div>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div>
+          {{ messages|first }}
+        </div>
+      {% endif %}
+    </div>
   </div>
 {% endfor %}

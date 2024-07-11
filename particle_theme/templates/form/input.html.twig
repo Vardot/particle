@@ -10,12 +10,39 @@
  * @see template_preprocess_input()
  */
 #}
-{% include '@atoms/form-element/_input.twig'
-  with {
-    input: {
-      variant: variant,
-      attributes: attributes
-    }
-  }
+{# Non-Input Form Types #}
+{% set form_type_classes = {
+  input: 'form-input',
+  button: 'form-input button btn--lightblue button--sm',
+  submit: 'form-input button btn--lightblue button--sm',
+  reset: 'form-input button btn--lightblue button--sm',
+  checkbox: 'form-checkbox',
+  color: 'form-color',
+  radio: 'form-radio',
+  range: 'form-range'
+} %}
+{# Update Classes with Design System Values #}
+{% set input_classes =
+  input_classes
+    |default([])
+    |merge(
+      [
+        'input',
+        'input--' ~ variant,
+        variant in (form_type_classes|keys) ? form_type_classes[variant] : form_type_classes.input,
+        attributes.class ? attributes.class
+      ]
+    )
 %}
+{# Update Attributes with New Classes + Supplemental Data #}
+{% set input_attributes =
+  attributes
+    |default({})
+    |merge({
+      class: input_classes,
+    })
+%}
+{% block input_content %}
+  <input {{ input_attributes|attributify }} aria-label="{{ variant }}" />
+{% endblock input_content %}
 {{ children }}

@@ -18,10 +18,31 @@
  */
 #}
 {% block content %}
-  {# Use logo to explicitly override values from preprocess. #}
-  {% set logo = {
-    logo_svg_inline: logo_svg_inline,
-    logo_img_src: logo_img_src
-  } %}
-  {% include '@atoms/branding/_branding.twig' with logo %}
+  <aside class="branding">
+    <div class="branding__site-logo">
+      <h1>
+        <a href="{{ url }}" title="{{ site_name }}" rel="home">
+          {% if logo_svg_inline %}
+            <span class="svg svg--embed fill-current">
+              {{ source(logo_svg_inline) }}
+            </span>
+          {% elseif logo_img_src %}
+            <div style="background-image: url({{ logo_img_src }}); background-repeat: no-repeat" class="image img-fluid image--primary"></div>
+          {% endif %}
+          <span class="sr-only">{{ site_name }}</span>
+        </a>
+      </h1>
+    </div>
+
+    {% if site_name %}
+      <h1 class="text-3xl branding__site-name">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+      </h1>
+    {% endif %}
+    {% if site_slogan %}
+      <p class="text-lg font-light branding__site-slogan">
+        {{ site_slogan }}
+      </p>
+    {% endif %}
+  </aside>
 {% endblock content %}

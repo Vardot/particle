@@ -15,10 +15,27 @@
 #}
 
 <div {{ wrapper_attributes }}>
-  {% include '@atoms/form-element/_textarea.twig' with {
-    textarea: {
-      attributes: attributes,
-      content: value
-    }
-  } %}
+  {# Update Classes with Design System Values #}
+  {% set textarea_classes =
+    textarea_classes
+      |default([])
+      |merge(['textarea', 'form-textarea', attributes.class ? attributes.class|join(' ')|trim])
+      |join(' ')
+      |trim
+  %}
+
+  {# Update Attributes with New Classes + Supplemental Data #}
+  {% set textarea_attributes =
+    attributes
+      |default({})
+      |merge({
+        class: textarea_classes
+      })
+  %}
+
+  <textarea {{ textarea_attributes|attributify }}>
+    {% block textarea_content %}
+      {{ content }}
+    {% endblock textarea_content %}
+  </textarea>
 </div>
