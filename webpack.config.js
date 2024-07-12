@@ -1,53 +1,110 @@
 /**
- * Drupal-specific webpack config.
+ * Webpack config.
  */
-
 const path = require("path");
-const { DefinePlugin } = require("webpack");
-
-// Plugins
+const { DefinePlugin, ProgressPlugin } = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const { mergeWithRules } = require("webpack-merge");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const RunScriptAfterEmit = require("./tools/webpack/run-script-after-emit");
-const particle = require("./particle");
-const webpack = require("webpack"); // to access built-in plugins
+
 // Constants: environment
 const { NODE_ENV } = process.env;
-
-// Constants: root
-const { ASSETS_ATOMIC_FOLDER } = require("./particle.root.config");
-
-// Constants: app
-const appConfig = require("./particle.app.config");
-
-const { APP_NAME, APP_DESIGN_SYSTEM, APP_DIST, APP_DIST_PUBLIC } = appConfig;
-
 const shared = {
-  entry: {
-    "drupal-jquery": [path.resolve(__dirname, "drupal-jquery.js")],
-    app: [path.resolve(__dirname, "index.js")],
-  },
+  entry: path.resolve(__dirname, "./particle_theme/index.js"),
   output: {
-    path: APP_DIST,
-    publicPath: APP_DIST_PUBLIC,
+    path: path.join(__dirname, "dist/assets"),
+    publicPath: "dist/assets",
   },
+  // development|production
+  mode: NODE_ENV,
+  devtool: NODE_ENV === "development" ? "eval" : "source-map",
   module: {
     rules: [
       {
-        test: /\.twig$/,
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "resolve-url-loader",
+            options: {
+              sourceMap: true,
+              root: "",
+            },
+          },
+          {
+            // PostCSS config at ./postcss.config.js
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                ident: "postcss",
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.js$/,
+        // @babel runtime and core must NOT be transformed by babel
+        exclude: /@babel(?:\/|\\{1,2})runtime|core-js/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
         loader: "file-loader",
         options: {
-          name: "[path][name].[ext]",
-          outputPath: ASSETS_ATOMIC_FOLDER,
-          context: APP_DESIGN_SYSTEM,
-          emit: true,
+          name: "images/[name].[ext]?[hash]",
         },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name].[ext]?[hash]",
+            },
+          },
+        ],
       },
     ],
   },
+  optimization: {
+    minimize: NODE_ENV === "production",
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          sourceMap: NODE_ENV === "production",
+        },
+      }),
+    ],
+  },
   plugins: [
-    new DefinePlugin({
-      BUILD_TARGET: JSON.stringify(APP_NAME),
+    new ESLintPlugin({
+      extensions: ["js"],
+      exclude: ["/node_modules/"],
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+    // Only add ProgressPlugin for non-production env.
+    ...(NODE_ENV === "production"
+      ? []
+      : [new ProgressPlugin({ profile: false })]),
   ],
+  resolve: {
+    extensions: [".ts", ".js", ".css"],
+  },
 };
 
 const dev = {
@@ -60,15 +117,12 @@ const dev = {
       exec: [
         // prettier-ignore
         `echo \n🚀 Webpack Drupal ${NODE_ENV} build complete! Edit 
-        apps/drupal-default/webpack.config.js to replace this line with
+        webpack.config.js to replace this line with
         anything you'd like run after rebuilding assets, e.g.
         'drupal cr all'. 🚀\n`,
       ],
     }),
   ],
-  externals: {
-    jquery: "jQuery",
-  },
 };
 
 const prod = {
@@ -79,13 +133,16 @@ const prod = {
   },
 };
 
-module.exports = particle(
-  // app: webpack
-  { shared, dev, prod },
-  // app: config
-  appConfig,
-  // Use extract css
-  {
-    cssMode: "extract",
+module.exports = mergeWithRules({
+  module: {
+    rules: {
+      test: "match",
+      use: "prepend",
+    },
   },
+})(
+  // App config shared between dev and prod modes
+  shared,
+  // App config specific to dev or prod
+  NODE_ENV === "development" ? dev : prod,
 );

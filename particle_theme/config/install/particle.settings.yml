@@ -41,7 +41,7 @@ features:
   favicon: true
 logo:
   use_default: false
-  path: themes/custom/particle/apps/drupal-default/particle_theme/utc-wordmark.svg
+  path: themes/custom/particle/particle_theme/utc-horizontal-web.svg
 favicon:
   use_default: true
 themag_facebook_link_title: ''

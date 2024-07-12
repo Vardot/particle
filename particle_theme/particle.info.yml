@@ -1,13 +1,11 @@
-name: Particle
+name: UTC Theme
 type: theme
-description: A Theme with Pattern Lab
+description: UTC Theme
 base theme: themag
 core_version_requirement: ^9 || ^10
 libraries:
   - particle/core
   - particle/google-fonts
-libraries-override:
-  core/jquery: particle/jquery
 regions:
   top_bar_first: 'Top bar first'
   top_bar_second: 'Top bar second'
@@ -25,11 +23,3 @@ regions:
   footer_third: 'Footer third'
   footer_bottom_first: 'Footer bottom first'
   footer_bottom_second: 'Footer bottom second'
-components:
-  namespaces:
-    protons: []
-    atoms: ../dist/app-drupal/assets/atomic/_patterns/01-atoms
-    molecules: []
-    organisms: []
-    templates: []
-    pages: []
