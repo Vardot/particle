@@ -1,8 +1,3 @@
-/* eslint func-names: 0 */
-/* eslint no-unused-vars: 0 */
-/* eslint no-param-reassign: 0 */
-/* eslint object-shorthand: 0 */
-/* eslint no-undef: 0 */
 (function ($, Drupal, drupalSettings) {
   // Adds slick arrows
   Drupal.behaviors.slickcustomarrows = {

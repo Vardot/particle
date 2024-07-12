@@ -1,10 +1,3 @@
-/* eslint no-unused-vars: 0 */
-/* eslint no-param-reassign: 0 */
-/* eslint object-shorthand: 0 */
-/* eslint no-undef: 0 */
-/* eslint func-names: 0 */
-/* eslint prefer-const: 0 */
-/* eslint no-plusplus: 0 */
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.superfishaccessibilityattributes = {
     attach: function (context, settings) {

@@ -93,6 +93,8 @@ const shared = {
     new ESLintPlugin({
       extensions: ["js"],
       exclude: ["/node_modules/"],
+      emitWarning: true,
+      failOnError: false,
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

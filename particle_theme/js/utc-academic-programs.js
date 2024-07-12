@@ -1,11 +1,3 @@
-/* eslint no-unused-vars: 0 */
-/* eslint no-param-reassign: 0 */
-/* eslint object-shorthand: 0 */
-/* eslint no-undef: 0 */
-/* eslint func-names: 0 */
-/* eslint prefer-template: 0 */
-/* eslint prefer-const: 0 */
-/* eslint vars-on-top: 0 */
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.academicprograms = {
     attach: function (context, settings) {
