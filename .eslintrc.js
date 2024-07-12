@@ -1,5 +1,5 @@
 /**
- * Use AirBnB ES6 linting standards, as well as a Jest plugin for tests
+ * Use AirBnB ES6 linting standards
  *
  * Rule reference: http://eslint.org/docs/rules
  * Individual rule reference: http://eslint.org/docs/rules/NAME-OF-RULE
