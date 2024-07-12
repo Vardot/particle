@@ -1,118 +1,93 @@
 
-# UTCWEB Particle: A design system integrating to Pattern Lab and a Drupal 8 theme
+# UTCWEB Theme
 
-CheatSheet
+The UTCWEB theme includes several npm scripts to facilitate theme development, building, and linting. These scripts help in automating tasks like compiling assets, watching for changes during development, and ensuring code quality.
 
-**Warning**
-1.  the module and the submodule both have a master and develop branch.
-1.  if working on the git submodule don't update utccloud parent repo until you have commited changes. (data can be lost if you update utccloud while working on particle subtheme.
-1.  Only commit the changes on the parent git repo when you want utccloud to refer to the latest revision of the particle repo. In other words, it should be done once per PR to the main repo.
-
-
-**Setup**
-1.  git submodule update --init --recursive -> the first time the submodule is added to your repo (on MacOS, linux handles this fine).
-1.  git submodule update --recursive -> after is beeing added once.
-1.  composer install and npm install -> if blt setup and sync have not been used.
-
-
-**Things to remember**
-
-1.  gulp -> npm run dev:drupal
-1.  npm start -> starts the living stylesheet
-1.  ads run drush cr -> might be needed from time to time.
-
-
-# Particle: A design system integrating to Pattern Lab and a Drupal 8 theme
-
-[![GitHub (pre-)release](https://img.shields.io/github/release/phase2/particle/all.svg)](https://github.com/phase2/particle/releases)
-[![Build Status](https://travis-ci.org/phase2/particle.svg?branch=master)](https://travis-ci.org/phase2/particle)
-[![Greenkeeper badge](https://badges.greenkeeper.io/phase2/particle.svg)](https://greenkeeper.io/)
-
-![Particle mascot: Astrogoat](apps/pl-default/pattern-lab/_patterns/01-atoms-demo/image/astrogoat.png?raw=true 'Astrogoat')
-
-Particle is an opinionated set of tools and examples to:
-
-1.  Build an application-agnostic **design system**
-1.  Apply that design system to a locally-served **Pattern Lab** for rapid
-    prototyping
-1.  Apply that design system to a **Drupal theme**
-
-In depth documentation about frontend approach using this project at
-[Phase2 Frontend Docs](https://phase2.gitbook.io/frontend/)
-
-## Prerequisites
-
-- [Node `^8`, `^10`, `^12`](https://nodejs.org)
-- [NPM `^5`, `^6`](https://www.npmjs.com/)
-- [PHP `^7`](https://php.net)
-
-[Step-by-step instructions to install all dependencies for OSX can be found in this Gist.](https://gist.github.com/illepic/efd6ab9f452af2a99b7ade78257e6b96)
-
-## Provides
-
-- Drupal theme, Grav theme, and Pattern Lab app
-- Strict [Atomic Design](http://atomicdesign.bradfrost.com/) component structure
-- Webpack bundling of all CSS, javascript, font, and static image assets for
-  multiple targets (Drupal theme, Grav theme, Pattern Lab)
-- [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) for local
-  hosting and hot reloading of assets into Pattern Lab
-- [Twig namespaced paths](https://symfony.com/doc/current/templating/namespaced_paths.html)
-  automatically added into Drupal theme and Pattern Lab config. Within any twig
-  file, `@atoms/thing.twig` means the same thing to Drupal theme and Pattern
-  Lab.
-- Iconfont auto-generation
-- Auto-linting against the
-  [AirBnB JavaScript Style Guide](https://github.com/airbnb/javascript)
-- All Webpack files are fully configurable
-- Simple [Yeoman](http://yeoman.io/) generator for Design System component
-  creation
-
-## Quickstart
-
-Particle builds design systems in dev mode for local hosting, or production mode
-for optimized asset generation.
-
-### Quickstart A
-
-1. Simply run:
-
-   ```bash
-   npm create @phase2/particle particle
-   ```
-
-1. Then `cd particle/` and run:
-
-   ```bash
-   npm start
-   ```
-
-### Quickstart B
-
-1.  [Download the latest release](https://github.com/phase2/particle/releases)
-1.  Extract anywhere (i.e. this readme should be at
-    `any/where/particle/README.md`)
-1.  Within the extracted folder run:
-
-```bash
-npm install
-npm run setup
-npm start
+Current toolset uses node 20. To switch node version;
+```
+nvm use 20
 ```
 
-Simply wait until the webpack bundle output appears then visit
-[http://0.0.0.0:8080/app-pl/pl/](http://0.0.0.0:8080/app-pl/pl/) (or
-[http://localhost:8080/app-pl/pl/](http://localhost:8080/app-pl/pl/)) and start
-working.
+## Available Scripts
 
-That's it. For **much** greater detail on the frontend approach using this
-project, check out the
-[Phase2 Frontend Docs](https://phase2.gitbook.io/frontend/).
+### Development Scripts
 
-## Design System Naming
+- **dev:drupal**
 
-The Design System Source folder is named default `./source/default`. It's handy
-in multi-design setups to name this per design system and post-fix `apps` with
-that design system name. For example, `apps/drupal-default/` contains the
-implementation of the `default` source directory. These are intended to be
-updated by the needs of your project.
-Test PR 2.0
+  Runs the webpack in development mode and watches for any file changes. This is useful during theme development as it automatically rebuilds assets when files are changed.
+
+  ```bash
+  npm run dev:drupal
+  ```
+
+- **build:drupal**
+
+  Builds the theme assets for production. This script runs webpack in production mode, optimizing the assets for deployment.
+
+  ```bash
+  npm run build:drupal
+  ```
+
+- **build:drupal:dev**
+
+  Similar to `build:drupal`, but it builds the assets in development mode. It's useful for debugging or when you need unminified assets for a development environment.
+
+  ```bash
+  npm run build:drupal:dev
+  ```
+
+### Linting Scripts
+
+- **lint**
+
+  Runs both JavaScript and CSS linting tasks. This script ensures that your code follows the specified style guides and helps in identifying common coding issues.
+
+  ```bash
+  npm run lint
+  ```
+
+- **lint:js**
+
+  Lints JavaScript files in the theme to identify and report on patterns found in ECMAScript/JavaScript code.
+
+  ```bash
+  npm run lint:js
+  ```
+
+- **lint:css**
+
+  Lints CSS files in the theme. It helps in avoiding errors and enforcing consistent conventions in your styles.
+
+  ```bash
+  npm run lint:css
+  ```
+
+### Formatting Scripts
+
+- **fmt**
+
+  Formats both JavaScript and CSS files using Prettier and fixes linting errors where possible. It ensures consistent formatting across your theme's codebase.
+
+  ```bash
+  npm run fmt
+  ```
+
+- **fmt:js**
+
+  Formats JavaScript files using ESLint's auto-fix option and Prettier. It helps in maintaining a clean and consistent codebase.
+
+  ```bash
+  npm run fmt:js
+  ```
+
+- **fmt:css**
+
+  Formats CSS files by fixing linting errors automatically and then running Prettier to ensure consistent styling.
+
+  ```bash
+  npm run fmt:css
+  ```
+
+## Conclusion
+
+These npm scripts are set up to help maintain a high-quality codebase and to streamline the development process. Use them regularly as part of your development workflow to minimize errors and maintain consistent coding standards.
