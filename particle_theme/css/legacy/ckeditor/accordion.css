@@ -1,0 +1,70 @@
+.ckeditor-accordion-container > dl dt > a,
+.ckeditor-accordion-container > dl dt:last-of-type > a {
+  display: block;
+  font-size: 500;
+  @apply bg-white;
+  @apply text-utc-new-blue-500;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  border: 2px solid;
+  @apply border-gray-300;
+  margin: 5px 0px 0px;
+}
+
+.ckeditor-accordion-container > dl dt > a,
+.ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: #fff !important;
+  color: #112e51 !important;
+  border-bottom: 2px solid rgba(226, 232, 240, 1) !important;
+}
+
+.ckeditor-accordion-container > dl dt > a:hover {
+  @apply bg-gray-300;
+  @apply border-utc-new-blue-500;
+  text-decoration: none;
+  font-weight: 400;
+  background: #e7eaee !important;
+  border-bottom: 2px solid #112e51 !important;
+}
+
+.ckeditor-accordion-container > dl dt.active > a {
+  @apply bg-gray-300;
+  @apply border-utc-new-blue-500;
+  border: 2px solid;
+  background: #e7eaee !important;
+  border-bottom: 1px solid #112e51 !important;
+}
+
+.ckeditor-accordion-container > dl dt.active > a:hover {
+  @apply bg-gray-300;
+  @apply border-utc-new-blue-500;
+  border-bottom: none;
+}
+
+/* contents */
+.ckeditor-accordion-container > dl dd {
+  display: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0;
+  will-change: height;
+}
+
+.ckeditor-accordion-container > dl dd.active {
+  @apply bg-white;
+  border: 2px solid;
+  @apply border-utc-new-blue-500;
+  border-top: 0;
+  font-weight: 400;
+}
+
+.ckeditor-accordion-container > dl {
+  position: relative;
+  border: 0;
+  padding-left: 0;
+}
+
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle::before,
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle::after {
+  @apply bg-gray-700;
+}

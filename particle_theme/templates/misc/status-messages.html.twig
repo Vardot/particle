@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific type.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ */
+#}
+
+{% set status_heading = {
+  status: 'Status message'|t,
+  error: 'Error message'|t,
+  warning: 'Warning message'|t,
+  info: 'Informative message'|t
+} %}
+
+{% for type, messages in message_list %}
+  <div role="contentinfo" aria-label="{{ status_heading[type] }}" {{ attributes|without('role', 'aria-label') }}>
+    {% set status_bg = {
+      status: 'bg-green-200',
+      error: 'bg-red-200',
+      warning: 'bg-yellow-200',
+      info: 'bg-blue-200'
+    } %}
+    {% set status_text = {
+      status: 'text-green-800',
+      error: 'text-red-800',
+      warning: 'text-yellow-800',
+      info: 'text-blue-800'
+    } %}
+
+    {% set alert_classes =
+      [
+        'mb-0',
+        'alert',
+        status_bg[type],
+        status_text[type],
+        'alert-dismissible',
+        'fade',
+        'show',
+        'rounded',
+        'relative',
+        alert_other_classes
+      ]
+        |join(' ')
+        |trim
+    %}
+    {% set alert_degree = type == 'error' ? 'role=alert' : 'aria-live=polite' %}
+    <div class="p-4 {{ alert_classes }}" {{ alert_degree }}>
+      <a href="#" role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}">
+        {# Not used as this action requires javascript #}
+        {# <span aria-hidden="true">&times;</span> #}
+      </a>
+      {% if status_headings[type] %}
+        <h2 class="visually-hidden">
+          {{ status_headings[type] }}
+        </h2>
+      {% endif %}
+      {% if (messages|length) > 1 %}
+        {% for message in messages %}
+          <div>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div>
+          {{ messages|first }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

@@ -1,4 +1,4 @@
-const ShellHelper = require('./phase2-node-shell-helper');
+const ShellHelper = require("./phase2-node-shell-helper");
 
 class RunScriptOnFiletypeChange extends ShellHelper {
   constructor(options) {
@@ -9,7 +9,7 @@ class RunScriptOnFiletypeChange extends ShellHelper {
 
   apply(compiler) {
     compiler.hooks.emit.tapAsync(
-      'RunScriptOnFiletypeChange',
+      "RunScriptOnFiletypeChange",
       ({ fileDependencies, fileTimestamps }, callback) => {
         // Convert fileTimestamps to array of arrays to find changed files.
         //  `changed` looks like [filePath, timeStamp]
@@ -48,7 +48,7 @@ class RunScriptOnFiletypeChange extends ShellHelper {
 
         // Fat arrow functions must return a value
         return true;
-      }
+      },
     );
   }
 }

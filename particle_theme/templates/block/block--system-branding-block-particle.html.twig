@@ -1,0 +1,48 @@
+{% extends 'block.html.twig' %}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - url: The url for the front page of the site.
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - logo_svg_inline: The svg logo if it exists.
+ * - logo_img_src: The src logo if it exists.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ */
+#}
+{% block content %}
+  <aside class="branding">
+    <div class="branding__site-logo">
+      <h1>
+        <a href="{{ url }}" title="{{ site_name }}" rel="home">
+          {% if logo_svg_inline %}
+            <span class="svg svg--embed fill-current">
+              {{ source(logo_svg_inline) }}
+            </span>
+          {% elseif logo_img_src %}
+            <div style="background-image: url({{ logo_img_src }}); background-repeat: no-repeat" class="image img-fluid image--primary"></div>
+          {% endif %}
+          <span class="sr-only">{{ site_name }}</span>
+        </a>
+      </h1>
+    </div>
+
+    {% if site_name %}
+      <h1 class="text-3xl branding__site-name">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+      </h1>
+    {% endif %}
+    {% if site_slogan %}
+      <p class="text-lg font-light branding__site-slogan">
+        {{ site_slogan }}
+      </p>
+    {% endif %}
+  </aside>
+{% endblock content %}
