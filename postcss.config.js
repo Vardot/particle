@@ -19,7 +19,11 @@ module.exports = ({ options, env }) => {
       // Hex in rgba like Sass
       hexrgba(),
       // Use .browserslistrc to determine CSS mutations
-      postcssPresetEnv(),
+      postcssPresetEnv({
+        features: {
+          'is-pseudo-class': false,
+        }
+      }),
       // Heavy processing for production
       env === "production" && cssnano(),
       postcssReporter({ clearReportedMessages: true }),
